@@ -229,9 +229,3 @@ nav ul li a:hover {
     width: 80%;
   }
 }
-
-@media (max-width: 120px) {
-  body p {
-    font-size: 0.2rem;
-  }
-}

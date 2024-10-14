@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Imóvel Guide</title>
+</head>
+
+<body>
+  <header>
+    <div class="containerHeader flex">
+      <div class="menuLeft flex">
+        <div class="logo">
+          <img src="./src/img/logoig.webp" alt="Logo Imóvel Guide">
+        </div>
+
+        <nav class="navBarLeft">
+          <ul class="navBarLeftList flex">
+            <li><a href="#">Condomínios</a></li>
+            <li><a href="#">Fórum</a></li>
+            <li><a href="#">Guia</a></li>
+            <li><a href="#">Artigos</a></li>
+            <li><a href="#">Ferramentas</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <nav class="navBarRight">
+        <ul class="navBarRightList flex">
+          <li><a href="#">Cotar Imóvel</a></li>
+          <li><a href="#">Planos</a></li>
+          <li><a href="#">Entrar</a></li>
+          <button class="btnCad"><a href="#">CADASTRE-SE</a></button>
+        </ul>
+      </nav>
+      <button class="btnMobile" id="openMenu">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+
+
+      <div class="mobileNav">
+        <div class="overlay" id="overlay"></div>
+        <aside>
+          <div class="containerHeader flexMobile">
+            <div class="menuLeft flexMobile">
+              <nav class="navBarLeft">
+                <ul class="flexMobile">
+                  <li><a href="#">Condomínios</a></li>
+                  <li><a href="#">Fórum</a></li>
+                  <li><a href="#">Guia</a></li>
+                  <li><a href="#">Artigos</a></li>
+                  <li><a href="#">Ferramentas</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <nav class="navBarRight">
+              <ul class="flexMobile">
+                <li><a href="#">Cotar Imóvel</a></li>
+                <li><a href="#">Planos</a></li>
+                <li><a href="#">Entrar</a></li>
+                <button class="btnCad">Cadastre-se</button>
+              </ul>
+            </nav>
+
+            <div>
+              <nav class="navFooterMobile">
+                <ul class="flex">
+                  <li><a href="#">Termos</a></li>
+                  <li><a href="#">Contatos</a></li>
+                  <li><a href="#">Sobre</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <div class="containerGrid">
+      <!-- CARD 1 - CORRETORES -->
+      <div class="cardRealters">
+        <div class="realters">
+          <div class="woman">
+            <div class="transbox">
+              <img src="./src/img/woman.jpg" alt="Corretora de Imóveis">
+            </div>
+          </div>
+
+          <div class="info">
+            <h2>Júlia Rodrigues</h2>
+            <span>3.000 pontos</span>
+            <a href="#" class="verTelefone">ver telefone</a>
+          </div>
+        </div>
+
+
+        <div class="realters">
+          <div class="man">
+            <div class="transbox">
+              <img class="visible" src="./src/img/man.jpg" alt="Corretor de Imóveis">
+            </div>
+          </div>
+          <div class="info">
+            <h2>Henrique Morais</h2>
+            <span>1.260 pontos</span>
+            <a href="#" class="verTelefone2">ver telefone</a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- CARD 2 - MENSAGEM -->
+
+      <div class="card">
+        <div class="message">
+          <h2>Mande uma mensagem:</h2>
+          <form id="sendMessage">
+            <input type="text" placeholder="Digite seu CPF:" id="cpf" oninput="mascara(this)">
+            <input type="text" placeholder="Digite seu telefone:" id="telMsg">
+            <textarea name="msg" rows="3" placeholder="Digite o assunto:"></textarea>
+
+            <a href="#" class="btnMessage" onclick="limpar()">Enviar Mensagem</a>
+
+          </form>
+        </div>
+      </div>
+
+      <!-- CARD 3 - REGRA DE TRES -->
+
+      <div class="card">
+        <div class="regraDeTres">
+          <h2>Regra de 3:</h2>
+          <form id="calculo">
+            <input type="number" placeholder="60" id="valor1">
+            <input type="number" placeholder="100" id="valor2">
+            <input type="number" placeholder="30" id="valor3">
+            <input type="number" placeholder="Resultado" class="result" id="btnResult">
+            <a href="#" class="btnCalculo" id="btnCalcular">Calcular</a>
+          </form>
+        </div>
+      </div>
+
+
+      <!-- CARD 4 - MODAL -->
+      <!-- MODAL-->
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <img src="./src/img/house.webp" alt="">
+        </div>
+      </div>
+
+      <div class="houseInfo">
+        <div class="cardHouse">
+          <img class="imgHouse" src="./src/img/house.webp" alt="Imagem Casa">
+        </div>
+        <div>
+          <a id="myBtn" class="btnModal">Abrir imagem no Modal</a>
+        </div>
+      </div>
+
+      <!-- CARD 5 - DOWNLOAD -->
+      <div class="houseInfo">
+        <div class="cardHouse" id="imgCaptura">
+
+          <span class="marcaDagua">Imóvel Guide</span>
+
+          <img class="imgHouse5" src="./src/img/house.webp" alt="Imagem Casa">
+
+        </div>
+
+        <div class="btnD">
+          <a class="btnDownload" id="capturar">Download</a>
+        </div>
+      </div>
+
+      <!-- CARD 6 - IMAGEM HOUSE -->
+      <div class="houseInfo">
+        <div class="cardHouse" id="zoom">
+          <img class="imgHouse6" src="./src/img/house.webp" alt="Imagem Casa">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="containerFooter flex">
+      <nav class="footerNav">
+        <ul class="flex">
+          <li><a href="#">Termos</a></li>
+          <li><a href="#">Contatos</a></li>
+          <li><a href="#">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <div class="copyFooter flex">
+        <p>© Copyright 2022. Todos os direitos reservados.</p>
+        <div class="logoF flex">
+          <img src="./src/img/logoig.webp" alt="">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="./src/js/html2canvas.js"></script>
+  <script src="./src/js/script.js"></script>
+
+
+</body>
+
+</html>
